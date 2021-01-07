@@ -1,10 +1,5 @@
 import React from "react";
+import App from "./src/App";
 import ReactDom from "react-dom";
-
-class App extends React.PureComponent {
-  render() {
-    return "working?";
-  }
-}
 
 ReactDom.render(<App />, document.getElementById("root"));
