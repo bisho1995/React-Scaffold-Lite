@@ -7,6 +7,7 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     compress: false,
     port: 9000,
+    overlay: true, // Show a black overlay if there are errors
   },
   output: {
     filename: "main.js",
@@ -16,6 +17,11 @@ module.exports = {
   module: {
     rules: [
       {
+        /**
+         * This is needed for loading .css files in our project
+         * todo: currently this is injecting styles in head section we need
+         * todo: a separate file for css
+         */
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
