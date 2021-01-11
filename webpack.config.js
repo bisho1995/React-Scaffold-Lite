@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   entry: path.join(__dirname, "index.js"),
@@ -6,8 +7,15 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: false,
+    /**
+     * Allow hot reloads
+     */
+    hot: true,
     port: 9000,
-    overlay: true, // Show a black overlay if there are errors
+    /**
+     * Show a black overlay if there are errors
+     */
+    overlay: true,
   },
   output: {
     filename: "main.js",
@@ -48,4 +56,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
 };
