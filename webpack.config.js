@@ -14,10 +14,15 @@ module.exports = {
     port: 9000,
     /**
      * Show a black overlay if there are errors
+     * todo: create a situation for this
      */
     overlay: true,
   },
   output: {
+    /**
+    todo: if I have filename as [name]-xyz.js 
+    name resolves to main. Why is that?
+     */
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
@@ -31,6 +36,7 @@ module.exports = {
          * todo: a separate file for css
          */
         test: /\.css$/i,
+        // todo: purpose of each of the loaders
         use: ["style-loader", "css-loader"],
       },
       {

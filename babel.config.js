@@ -1,5 +1,6 @@
 module.exports = {
   presets: [
+    // todo: check what plugins are coming from preset-react
     "@babel/preset-react",
     [
       /**
@@ -47,6 +48,7 @@ module.exports = {
        */
       "@babel/preset-env",
       {
+        // todo: mention the usage of useBuiltIns
         useBuiltIns: "entry",
         /**
          * List the plugins that are installed due to this preset
@@ -64,6 +66,9 @@ module.exports = {
      *  }
      * }
      */
-    ["@babel/plugin-proposal-class-properties", { loose: true }],
+    ["@babel/plugin-proposal-class-properties", {
+      // todo: mention the usage of loose
+      loose: true
+    }],
   ],
 };
